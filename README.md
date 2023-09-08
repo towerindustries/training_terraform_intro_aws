@@ -1,0 +1,1 @@
+# training_terraform_intro_aws
