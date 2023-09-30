@@ -17,16 +17,20 @@
 #13: Create a file (dev-example-key.pub) in the terraform code folder with the public ssh key in it.
 
 terraform {
+  backend "local" {
+    path = "terraform.tfstate"
+    
+  }
   required_providers {
     aws = {
-      source = "hashicorp/aws"
-      version = "4.62.0"
+      source  = "hashicorp/aws"
+      version = "5.17.0"
     }
   }
+  required_version = "~> 1.5.7"
 }
 
 provider "aws" {
-  region = "us-east-1" // Change to your desired region
 }
 ####################
 ## Create the VPC ##
